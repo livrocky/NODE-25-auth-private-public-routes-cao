@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('Route');
+userRoute.post('/register', (req, res) => {
+  res.send('prisijungei');
 });
 
 module.exports = router;
