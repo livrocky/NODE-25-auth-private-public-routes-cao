@@ -13,7 +13,7 @@ userRoute.get('/users', async (req, res) => {
   try {
     connection = await mysql.createConnection(dbConfig);
     console.log('connected');
-    const sql = 'SELECT * FROM users';
+    const sql = 'SELECT COUNT(id) AS Users FROM users';
     const [rows] = await connection.execute(sql);
     res.json(rows);
   } catch (error) {

@@ -36,7 +36,25 @@ async function findUserByEmail(email) {
   }
 }
 
+async function countUsers(email) {
+  let conn;
+  try {
+    conn = await mysql.createConnection(dbConfig);
+    const sql = `
+    SELECT COUNT(id) AS Users FROM users
+        `;
+    const [result] = await conn.execute(sql, [email]);
+    return result[0];
+  } catch (error) {
+    console.log('countUsers===', error);
+    return false;
+  } finally {
+    conn?.end();
+  }
+}
+
 module.exports = {
   addUserToDb,
   findUserByEmail,
+  countUsers,
 };
