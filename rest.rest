@@ -1,0 +1,17 @@
+###
+POST http://localhost:3010/register
+Content-Type: application/json
+
+{
+"email": "antras@bandymas.lt",
+"password": "secret123"
+}
+
+###
+POST http://localhost:3010/login
+Content-Type: application/json
+
+{
+"email": "antras@bandymas.lt",
+"password": "secret123"
+}
