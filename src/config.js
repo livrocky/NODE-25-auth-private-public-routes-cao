@@ -8,10 +8,11 @@ const dbConfig = {
   user: process.env.MYSQL_USER,
   password: process.env.PASSWORD,
   database: process.env.DATABASE,
-  port: process.env.DB_PORT,
 };
 
-console.log('dbConfig ===', dbConfig);
+// const jwtSecret = process.env.JWT_SECRET;
+// if (!jwtSecret) throw new Error('no jwt secret found in .env');
+// console.log('dbConfig ===', dbConfig);
 
 module.exports = {
   PORT,
